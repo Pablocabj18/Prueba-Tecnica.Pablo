@@ -19,13 +19,13 @@ export class AutoRepository implements DatabaseRepository<Auto> {
   async get(id: Id, query?: Query): Promise<Auto> {
     const repository = (await getDataSource()).getRepository(Auto);
 
-    const task = await repository.findOneBy({ id: id as any });
+    const auto = await repository.findOneBy({ id: id as any });
     
-    if (!task) {
-      throw new NotFound("Task does not exist");
+    if (!auto) {
+      throw new NotFound("Not exist");
     }
 
-    return task;
+    return auto;
   }
 
   async update(id: Id, data: Auto, query?: Query): Promise<Auto> {

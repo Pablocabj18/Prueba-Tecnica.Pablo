@@ -12,7 +12,7 @@ export const getDataSource = async (): Promise<Connection> => {
 connection = await createConnection({
     type: "mysql",
     host: "localhost",
-    port: 3307,
+    port: 3306,
     username: "root",
     password: "admin1234",
     database: "concesionaria",
